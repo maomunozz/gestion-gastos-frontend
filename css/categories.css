@@ -5,6 +5,40 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Barra de navegación */
+.navbar {
+  background-color: #007bff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #0056b3;
+}
+
 .container {
   max-width: 800px;
   margin: 20px auto;
@@ -55,12 +89,12 @@ button:hover {
   margin-top: 20px;
 }
 
-ul {
+.list-container ul {
   list-style: none;
   padding: 0;
 }
 
-li {
+.list-container li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +105,7 @@ li {
   background-color: #f9f9f9;
 }
 
-li button {
+.list-container li button {
   background-color: #dc3545;
   padding: 5px 10px;
   border: none;
@@ -80,14 +114,14 @@ li button {
   cursor: pointer;
 }
 
-li button:hover {
+.list-container li button:hover {
   background-color: #c82333;
 }
 
-li .edit {
+.list-container li .edit {
   background-color: #ffc107;
 }
 
-li .edit:hover {
+.list-container li .edit:hover {
   background-color: #e0a800;
 }

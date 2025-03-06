@@ -1,6 +1,9 @@
 import { apiFetch } from "../utils/api.js";
 
 // Función para manejar el envío del formulario de registro
+import { apiFetch } from "../utils/api.js";
+
+// Función para manejar el envío del formulario de registro
 async function handleRegister(event) {
   event.preventDefault(); // Evitar recargar la página
 
@@ -24,6 +27,12 @@ async function handleRegister(event) {
     console.error("Error en el registro:", error);
   }
 }
+
+// Agregar el evento al formulario
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", handleRegister);
+
 
 // Agregar el evento al formulario
 document

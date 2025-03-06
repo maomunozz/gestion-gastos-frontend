@@ -1,35 +1,28 @@
 import { getToken, clearToken } from "../src/utils/auth.js";
 import { apiFetch } from "../src/utils/api.js";
 
-// Función para cerrar sesión
-function logout() {
-  clearToken(); // Elimina el token del localStorage
+// Cerrar sesión
+document.getElementById("logout").addEventListener("click", () => {
+  clearToken();
   alert("Has cerrado sesión");
-  window.location.href = "login.html"; // Redirige al login
-}
+  window.location.href = "login.html";
+});
 
-// Vincular la función al botón de cierre de sesión
-document.getElementById("logout").addEventListener("click", logout);
-
+// Verificar token
 async function verifyToken() {
   const token = getToken();
-
-  if (!token) {
-    redirectToLogin();
-    return;
-  }
+  if (!token) return redirectToLogin();
 
   try {
     await apiFetch("/auth/verify", "GET", null, token);
-  } catch (error) {
-    console.error("Token inválido o expirado:", error.message);
+  } catch {
     clearToken();
     redirectToLogin();
   }
 }
 
 function redirectToLogin() {
-  alert("Debes iniciar sesión para acceder al dashboard.");
+  alert("Debes iniciar sesión.");
   window.location.href = "login.html";
 }
 

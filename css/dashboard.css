@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -39,6 +40,7 @@ body {
   background-color: #0056b3;
 }
 
+/* Contenedor principal */
 .container {
   max-width: 800px;
   margin: 20px auto;
@@ -54,30 +56,47 @@ h2 {
   color: #333;
 }
 
+/* Formulario */
 .form-container {
   margin-bottom: 20px;
 }
 
 form {
   display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
 }
 
-input[type="text"] {
+form label {
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select,
+button {
   padding: 10px;
-  width: 60%;
+  font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -85,10 +104,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-.list-container {
-  margin-top: 20px;
-}
-
+/* Listado de gastos */
 .list-container ul {
   list-style: none;
   padding: 0;
@@ -105,6 +121,11 @@ button:hover {
   background-color: #f9f9f9;
 }
 
+.list-container li span {
+  flex: 1;
+  color: #333;
+}
+
 .list-container li button {
   background-color: #dc3545;
   padding: 5px 10px;
@@ -114,14 +135,15 @@ button:hover {
   cursor: pointer;
 }
 
+.list-container li button.edit {
+  background-color: #ffc107;
+}
+
+.list-container li button.edit:hover {
+  background-color: #e0a800;
+}
+
 .list-container li button:hover {
   background-color: #c82333;
 }
 
-.list-container li .edit {
-  background-color: #ffc107;
-}
-
-.list-container li .edit:hover {
-  background-color: #e0a800;
-}
